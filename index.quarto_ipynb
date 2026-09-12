@@ -10,11 +10,15 @@
         "format: \n",
         "    revealjs:\n",
         "        echo: false\n",
+        "bibliography: refs.bib\n",
+        "csl: ieee.csl\n",
+        "lang: de\n",
+        "output-dir: docs\n",
         "---\n",
         "\n",
-        "## 2011 und 2023"
+        "## Stromerzeugung: 2011 und 2023"
       ],
-      "id": "d012ae65"
+      "id": "15abaad3"
     },
     {
       "cell_type": "code",
@@ -43,7 +47,7 @@
         "    alpha=0.9\n",
         ")\n",
         "\n",
-        "ax.set_ylabel(\"Stromerzeugung in TWh\")\n",
+        "ax.set_ylabel(\"TWh\")\n",
         "ax.legend(loc=\"upper left\", bbox_to_anchor=(1, 1))\n",
         "ax.axvline(2011, color=\"red\", linestyle=\"--\", linewidth=1.5)\n",
         "ax.axvline(2023, color=\"red\", linestyle=\"--\", linewidth=1.5)\n",
@@ -52,7 +56,7 @@
         "    spine.set_visible(False)\n",
         "ax.tick_params(axis=\"both\", length=0)"
       ],
-      "id": "9d348219",
+      "id": "89b6ce33",
       "execution_count": null,
       "outputs": []
     },
@@ -60,9 +64,9 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "## Prozent"
+        "## Prozent @ag_energiebilanzen_e_v_auswertungstabellen_2026"
       ],
-      "id": "c78e9e0c"
+      "id": "c703ee17"
     },
     {
       "cell_type": "code",
@@ -95,14 +99,13 @@
         "    alpha=0.9\n",
         ")\n",
         "\n",
-        "ax.set_ylabel(\"%\")\n",
         "ax.legend(loc=\"upper left\", bbox_to_anchor=(1, 1))\n",
         "ax.grid(False)\n",
         "for spine in ax.spines.values():\n",
         "    spine.set_visible(False)\n",
         "ax.tick_params(axis=\"both\", length=0)"
       ],
-      "id": "7a6a76b6",
+      "id": "48b7012f",
       "execution_count": null,
       "outputs": []
     },
@@ -110,9 +113,9 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "## Strompreise"
+        "## Strompreise @kost_levelized_2013, @kost_study_2024"
       ],
-      "id": "21913f8a"
+      "id": "88103b71"
     },
     {
       "cell_type": "code",
@@ -144,10 +147,10 @@
         "\n",
         "fig, ax = plt.subplots(figsize=(10, 6))\n",
         "positionen = np.arange(len(jahre))\n",
-        "breite = 0.24\n",
+        "breite = 0.20\n",
         "\n",
         "for offset, (traeger, werte) in zip(\n",
-        "    [-breite, 0, breite], kosten.items()\n",
+        "    [-0.25, 0, 0.25], kosten.items()\n",
         "):\n",
         "    untergrenzen = [werte[jahr][0] for jahr in jahre]\n",
         "    hoehen = [werte[jahr][1] - werte[jahr][0] for jahr in jahre]\n",
@@ -161,17 +164,44 @@
         "    )\n",
         "\n",
         "ax.set_xticks(positionen, jahre)\n",
-        "ax.set_xlabel(\"Jahr\")\n",
-        "ax.set_ylabel(\"Strompreis (ct/kWh)\")\n",
+        "ax.set_ylabel(\"ct/kWh\")\n",
         "ax.legend(loc=\"upper left\")\n",
         "ax.grid(False)\n",
         "for spine in ax.spines.values():\n",
         "    spine.set_visible(False)\n",
         "ax.tick_params(axis=\"both\", length=0)"
       ],
-      "id": "96359297",
+      "id": "9681dad7",
       "execution_count": null,
       "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Haushalte @noauthor_open_nodate\n",
+        "\n",
+        "![](data/newplot.png)\n",
+        "\n",
+        "## Großhandel Preise @energy-charts_durchschnittliche_2026\n",
+        "\n",
+        "![](data/energy-charts_Jährliche_Börsenstrompreise_in_Deutschland.png)\n",
+        "\n",
+        "## Was wäre passieren, wenn...? @emblemsvag_what_2024\n",
+        "\n",
+        "![](data/gsol_a_2355642_f0008_oc.jpg)\n",
+        "\n",
+        "Falsch!\n",
+        "\n",
+        "## CO2-Emissionen\n",
+        "\n",
+        "<iframe src=\"https://ourworldindata.org/grapher/co-emissions-per-capita?time=1990..latest&country=~DEU&tab=line\" loading=\"lazy\" style=\"width: 100%; height: 600px; border: 0px none;\" allow=\"web-share; clipboard-write\"></iframe>\n",
+        "\n",
+        "\n",
+        "\n",
+        "## Quellen  "
+      ],
+      "id": "953cb308"
     }
   ],
   "metadata": {

@@ -3,6 +3,8 @@ __pycache__/
 *.py[oc]
 build/
 dist/
+!docs/site_libs/revealjs/dist/
+!docs/site_libs/revealjs/dist/**
 wheels/
 *.egg-info
 

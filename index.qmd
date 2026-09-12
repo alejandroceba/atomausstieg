@@ -7,6 +7,7 @@ format:
 bibliography: refs.bib
 csl: ieee.csl
 lang: de
+output-dir: docs
 ---
 
 ## Stromerzeugung: 2011 und 2023

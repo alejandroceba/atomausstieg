@@ -145,7 +145,7 @@ ax.tick_params(axis="both", length=0)
 
 ![](data/energy-charts_Jährliche_Börsenstrompreise_in_Deutschland.png)
 
-## Was wäre passieren, wenn...? @emblemsvag_what_2024
+## Was wäre passiert, wenn...? @emblemsvag_what_2024
 
 ![](data/gsol_a_2355642_f0008_oc.jpg)
 
